@@ -19,7 +19,14 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://sohotheatre.com/wp-content/uploads/2017/10/Sassy-best-friend-sep.jpg',
       venue: 'The Enterprise'
     }
-  }])
+  },{
+    gig: {
+      name: 'Tom Allen',
+      image: 'https://i.guim.co.uk/img/media/d7428a87e15c1a6b0725d17a8b0a7ff5175372ee/1161_971_1824_1094/master/1824.jpg?w=300&q=55&auto=format&usm=12&fit=max&s=d6eea9ebba20a21ea226b262fa942fc0',
+      venue: 'The 99 Comedy Club'
+    }
+  }
+  ])
     .then(events => console.log(`${events.length} events created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());

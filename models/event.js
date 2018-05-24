@@ -1,12 +1,5 @@
 const mongoose = require('mongoose');
 
-const eventSchema = new mongoose.Schema({
-  gig: gigSchema,
-  pub: placeSchema,
-  restaurant: placeSchema,
-  user: { type: mongoose.Schema.ObjectId }
-});
-
 
 const placeSchema = new mongoose.Schema({
   name: {type: String },
@@ -17,6 +10,7 @@ const placeSchema = new mongoose.Schema({
     lng: {type: Number}
   }
 });
+
 
 const gigSchema = new mongoose.Schema({
   name: {type: String},
@@ -33,6 +27,14 @@ const gigSchema = new mongoose.Schema({
   ticketsAvailable: { type: Boolean},
   description: {type: String }
 });
+
+const eventSchema = new mongoose.Schema({
+  gig: gigSchema,
+  pub: placeSchema,
+  restaurant: placeSchema,
+  user: { type: mongoose.Schema.ObjectId }
+});
+
 
 
 module.exports = mongoose.model('Event', eventSchema);
