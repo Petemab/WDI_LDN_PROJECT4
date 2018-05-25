@@ -28,6 +28,10 @@ mongoose.connect(dbURI, (err, db) => {
   }
   ])
     .then(events => console.log(`${events.length} events created`))
+
+    // return User
+    //.create 
+
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
 
