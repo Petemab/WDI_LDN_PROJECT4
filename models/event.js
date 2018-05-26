@@ -27,7 +27,7 @@ const gigSchema = new mongoose.Schema({
     lat: { type: Number },
     lng: { type: Number }
   },
-  date: { type: Date },
+  date: { type: String },
   startTime: { type: Number },
   entryprice: { type: String },
   ticketsAvailable: { type: Boolean },
@@ -37,6 +37,7 @@ const gigSchema = new mongoose.Schema({
 });
 
 const eventSchema = new mongoose.Schema({
+  eventName: { type: String },
   gig: gigSchema,
   pub: placeSchema,
   restaurant: placeSchema,
