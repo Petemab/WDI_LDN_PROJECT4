@@ -14,6 +14,7 @@ import EventsShow from './components/events/Show';
 import EventsNew from './components/events/New';
 import UsersShow from './components/users/Show';
 import AuthRegister from './components/auth/Register';
+import AuthLogin from './components/auth/Login';
 import FlashMessages from './components/common/FlashMessages';
 
 
@@ -31,6 +32,7 @@ class App extends React.Component {
                 <Route exact path="/users/:id" component={UsersShow}/>
                 <Route path="/events" component={EventsIndex}/>
                 <Route path="/register" component={AuthRegister}/>
+                <Route path="/login" component={AuthLogin}/>
 
 
 
