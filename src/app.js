@@ -12,6 +12,7 @@ import Home from './components/Home';
 import EventsIndex from './components/events/Index';
 import EventsShow from './components/events/Show';
 import EventsNew from './components/events/New';
+import UsersShow from './components/users/Show';
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
               <Switch>
                 <Route exact path="/events/new" component={EventsNew} />
                 <Route exact path="/events/:id" component={EventsShow}/>
+                <Route exact path="/users/:id" component={UsersShow}/>
                 <Route path="/events" component={EventsIndex}/>
 
 
