@@ -13,12 +13,16 @@ import EventsIndex from './components/events/Index';
 import EventsShow from './components/events/Show';
 import EventsNew from './components/events/New';
 import UsersShow from './components/users/Show';
+import AuthRegister from './components/auth/Register';
+import FlashMessages from './components/common/FlashMessages';
+
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <main>
+          <FlashMessages />
           <section className="section">
             <div className="container">
               <Switch>
@@ -26,6 +30,7 @@ class App extends React.Component {
                 <Route exact path="/events/:id" component={EventsShow}/>
                 <Route exact path="/users/:id" component={UsersShow}/>
                 <Route path="/events" component={EventsIndex}/>
+                <Route path="/register" component={AuthRegister}/>
 
 
 
