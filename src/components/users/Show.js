@@ -29,6 +29,7 @@ class UsersShow extends React.Component{
         <p>{ user.username }</p>
         <img src={`${user.image}`}/>
         <p>{user.faveComedians[0]}</p>
+        <p>{user.events}</p>
 
       </div>
 

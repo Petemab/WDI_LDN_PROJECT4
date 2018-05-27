@@ -13,7 +13,6 @@ componentDidMount() {
   console.log(this.props);
   axios.get(`/api/events/${this.props.match.params.id}`)
     .then(res => this.setState({ event: res.data }));
-
 }
 
 render(){
