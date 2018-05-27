@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 class EventsIndex extends React.Component{
@@ -19,15 +20,19 @@ class EventsIndex extends React.Component{
     return(
       <div>
         <h1>This is the Index page for events</h1>
-        {/* {this.state.events.map(event =>
+        {this.state.events.map(event =>
           <div key={event._id}>
-            <p>{event.name}</p>
-            <p>{event.gig.name}</p>
-            <p>{event.gig.venue}</p>
+            <Link to={`/events/${event._id}`}>
+              <p>{event.eventName}</p>
+              <p>{event.gig.name}</p>
+              <img src={`${event.gig.image}`}/>
+              <p>{event.gig.venue}</p>
+              <p>{event.gig.date}</p>
+            </Link>
 
 
           </div>
-        )} */}
+        )}
 
       </div>
     );
