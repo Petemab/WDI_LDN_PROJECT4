@@ -3,10 +3,10 @@ import React from 'react';
 
 //add list of functions to pass in the event form
 
-const EventForm = ({handleChange, handleSubmit, event}) => {
+const EventForm = ({handleChange, findGigs, event}) => {
 
   return(
-    <form onSubmit={handleSubmit}>
+    <form >
       <h1>This will be a form</h1>
       <div className="field">
         <label htmlFor="name">Event Name</label>
@@ -20,6 +20,7 @@ const EventForm = ({handleChange, handleSubmit, event}) => {
           placeholder="Event Date" onChange={handleChange}
           value={event.date} />
       </div>
+      <button onClick={findGigs}>Find Gigs</button>
       {/* <div className="field">
         <label htmlFor="location">Which City?</label>
         <input id="city" name="city" className="input"

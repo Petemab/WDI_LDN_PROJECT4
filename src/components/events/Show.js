@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Map from '../common/Map';
 
 
 class EventsShow extends React.Component{
@@ -37,6 +38,7 @@ render(){
       <p>{event.pub.name}</p>
       <img src={`${event.pub.image}`}/>
       <p>{event.pub.address}</p>
+      <Map className="map" center={event.gig.location}/>
 
 
     </div>
