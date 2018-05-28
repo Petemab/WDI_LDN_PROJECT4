@@ -7,8 +7,10 @@ import {
 } from 'react-router-dom';
 
 import './scss/style.scss';
+import 'bulma';
 
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 
 import EventsIndex from './components/events/Index';
@@ -25,6 +27,7 @@ class App extends React.Component {
     return (
       <Router>
         <main>
+          <Navbar />
           <FlashMessages />
           <section className="section">
             <div className="container">
