@@ -38,7 +38,7 @@ render(){
       <p>{event.pub.name}</p>
       <img src={`${event.pub.image}`}/>
       <p>{event.pub.address}</p>
-      <Map className="map" center={event.gig.location}/>
+      <Map className="map" center={event.gig.location} markers={event.pub.location}/>
 
 
     </div>

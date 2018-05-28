@@ -26,7 +26,7 @@ class Map extends React.Component {
     // this.generateMarkers();
 
   }
-
+  // fix this
   // generateMarkers = () => {
   //   if(!this.props.markers) return false;
   //
@@ -36,7 +36,7 @@ class Map extends React.Component {
   //     return new google.maps.Marker({
   //       position: marker.location,
   //       map: this.map,
-  //       label: '🍔'
+  //       label: '🍺'
   //     });
   //   });
   //
