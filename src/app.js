@@ -19,6 +19,7 @@ import EventsNew from './components/events/New';
 import UsersShow from './components/users/Show';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
+import SecureRoute from './components/common/SecureRoute';
 import FlashMessages from './components/common/FlashMessages';
 
 
@@ -32,9 +33,9 @@ class App extends React.Component {
           <section className="section">
             <div className="container">
               <Switch>
-                <Route exact path="/events/new" component={EventsNew} />
-                <Route exact path="/events/:id" component={EventsShow}/>
-                <Route exact path="/users/:id" component={UsersShow}/>
+                <SecureRoute exact path="/events/new" component={EventsNew} />
+                <SecureRoute exact path="/events/:id" component={EventsShow}/>
+                <SecureRoute exact path="/users/:id" component={UsersShow}/>
                 <Route path="/events" component={EventsIndex}/>
                 <Route path="/register" component={AuthRegister}/>
                 <Route path="/login" component={AuthLogin}/>
