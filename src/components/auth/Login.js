@@ -19,7 +19,7 @@ class AuthLogin extends React.Component {
         Flash.setMessage('info', res.data.message);
 
       })
-      .then(() => this.props.history.push('/users/:id'))
+      .then(() => this.props.history.push(`/users/${this.props.match.id}`))
       .catch(() => {
         Flash.setMessage('danger', 'Invalid credentials');
         this.props.history.replace('/login');
@@ -48,7 +48,7 @@ class AuthLogin extends React.Component {
             onChange={this.handleChange}
           />
         </div>
-        <button className="button is-primary">Submit</button>
+        <button className="button">Submit</button>
       </form>
     );
   }

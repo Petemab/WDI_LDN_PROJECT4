@@ -8,8 +8,7 @@ import EventForm from './Form';
 class EventsNew extends React.Component{
 
 state = {
-  errors: {},
-  gigs: {}
+  errors: {}
 }
 
 //desctructures the e event to pass it as an argument
@@ -35,7 +34,7 @@ findGigs = (e) => {
         maxDate: '2018-07-02'
       }
     })
-    .then(res => this.setState({ gigs: res.data }, () =>
+    .then(res => this.setState({ gigs: res.data.results }, () =>
       console.log(this.state)));
 }
 
@@ -49,19 +48,31 @@ handleSubmit = e => {
 }
 
 render(){
-
+  console.log('this.state.gigs', this.state.gigs);
   return(
     <div>
-      <h1>This will be the create new event page</h1>
-      <EventForm
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        event={this.state}
-        findGigs={this.findGigs}
-      />
+      {!this.state.gigs ?
+        <div>
+          <h1>This will be the create new event page</h1>
+          <EventForm
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            event={this.state}
+            findGigs={this.findGigs}
+          />
+        </div> :
+        <h1>We found some gigs!</h1>
+        {this.state.gigs.map(gig =>
+          <div key={gig.id}>
+            <p>{gig.eventname}</p>
+            <p>{gig.artists[0].name}</p>
+
+
+          </div>
+        )}
+      }
 
     </div>
-
 
   );
 

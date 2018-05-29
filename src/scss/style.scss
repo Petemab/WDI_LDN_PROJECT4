@@ -1,6 +1,11 @@
 
-html{
-  background: url('../assets/images/editedmic1.jpg') no-repeat fixed center;
+.html{
+  background: url('../assets/images/editedmic1.jpg') no-repeat  center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   // height: 100%;
 // no-repeat center center fixed;;
 
