@@ -19,7 +19,8 @@ class AuthLogin extends React.Component {
         Flash.setMessage('info', res.data.message);
 
       })
-      .then(() => this.props.history.push(`/users/${this.props.match.id}`))
+      //change the page user pushes to to their user page here
+      .then(() => this.props.history.push('/events'))
       .catch(() => {
         Flash.setMessage('danger', 'Invalid credentials');
         this.props.history.replace('/login');

@@ -23,6 +23,27 @@ class Map extends React.Component {
       label: '😆'
     });
 
+
+    // this.marker.addListener('click', () => {
+    //   // infowindow.setContent('<div><strong>' + station.name + '</strong><br>');
+    //   // infowindow.open(map, marker);
+    //   placesService.nearbySearch({
+    //     location: this.marker.getPosition(),
+    //     radius: 500,
+    //     type: ['bar']
+    //   }, (results) => {
+    //     const cleanedResults = results.map(bar => {
+    //       return {
+    //         name: bar.name,
+    //         address: bar.vicinity,
+    //         location: bar.geometry.location.toJSON(),
+    //         image: bar.photos ? bar.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) : null
+    //       };
+    //     });
+
+
+
+
     // this.generateMarkers();
 
   }
