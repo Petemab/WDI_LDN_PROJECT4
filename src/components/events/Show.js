@@ -42,7 +42,7 @@ handleCommentSubmit = (e) => {
 }
 
 handleCommentDelete = (comment) => {
-
+  console.log(comment);
   const { id } = this.props.match.params;
   axios
     .delete(`/api/events/${id}/comments/${comment._id}`, {
@@ -76,7 +76,8 @@ render(){
           <p>{event.pub.name}</p>
           <img src={`${event.pub.image}`}/>
           <p>{event.pub.address}</p>
-          <Map className="map" center={event.gig.location} markers={event.pub.location}/>
+          {/* <p>{event.pub.geometry.location.lat}</p> */}
+          <Map className="map" center={event.gig.location} />
         </div>
       }
       <Link to={`/events/${event._id}/edit`}

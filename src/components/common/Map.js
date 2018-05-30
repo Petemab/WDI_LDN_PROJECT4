@@ -23,6 +23,12 @@ class Map extends React.Component {
       label: '😆'
     });
 
+    this.pubMarker = new google.maps.Marker({
+      position: this.map.pubMarker,
+      map: this.map,
+      label: '🍺'
+    });
+
 
     // this.marker.addListener('click', () => {
     //   // infowindow.setContent('<div><strong>' + station.name + '</strong><br>');
@@ -74,7 +80,7 @@ class Map extends React.Component {
     this.markers.forEach(marker => marker.setMap(null));
     this.markers = null;
     this.marker.setMap(null);
-    this.marker = null;
+    this.pubMarker = null;
     this.map = null;
   }
 

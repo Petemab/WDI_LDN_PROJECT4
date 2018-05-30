@@ -13,8 +13,7 @@ const placeSchema = new mongoose.Schema({
   location: {
     lat: { type: Number },
     lng: { type: Number }
-  },
-  comments: [ commentSchema ]
+  }
 });
 
 
@@ -32,8 +31,7 @@ const gigSchema = new mongoose.Schema({
   entryPrice: { type: String },
   ticketsAvailable: { type: Boolean },
   acts: [],
-  description: { type: String },
-  comments: []
+  description: { type: String }
 });
 
 const eventSchema = new mongoose.Schema({
@@ -42,7 +40,7 @@ const eventSchema = new mongoose.Schema({
   pub: placeSchema,
   restaurant: placeSchema,
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  comments: []
+  comments: [ commentSchema ]
 });
 
 

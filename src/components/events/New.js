@@ -86,7 +86,7 @@ selectPub = (e) => {
   const eventName = this.state.eventName;
   const event = { ...this.state.event, pub, eventName };
   this.setState({ event }, () =>
-    console.log(this.state));
+    console.log('after selecting pub ====>', this.state));
 }
 
 handleSubmit = (e) => {
@@ -153,7 +153,7 @@ render(){
           </select>
           }
           {/* change the center below */}
-          <Map className="map" center={gig.location}/>
+          <Map className="map" center={gig.location} />
           <button onClick={this.handleSubmit}>Save this Stand Up Soirée</button>
 
         </div>
