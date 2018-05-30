@@ -12,14 +12,14 @@ const EventForm = ({handleChange, findGigs, event}) => {
         <label htmlFor="name">Event Name</label>
         <input id="eventName" name="eventName" className="input"
           placeholder="Event Name" onChange={handleChange}
-          value={event.name || ''} />
+          value={event.eventName || ''} />
       </div>
-      <div className="field">
+      {/* <div className="field">
         <label htmlFor="location">Which City?</label>
         <input id="city" name="city" className="input"
           placeholder="Which City?" onChange={handleChange}
           value={event.city || ''} />
-      </div>
+      </div> */}
       <div className="field">
         <label htmlFor="date">Date</label>
         <input id="date" type="date" name="date" className="input"

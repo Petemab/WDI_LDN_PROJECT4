@@ -19,7 +19,7 @@ const placeSchema = new mongoose.Schema({
 
 
 const gigSchema = new mongoose.Schema({
-  name: { type: String },
+  name: { type: String, required: 'This field is required' },
   image: { type: String },
   venue: { type: String },
   address: { type: String },
@@ -27,7 +27,7 @@ const gigSchema = new mongoose.Schema({
     lat: { type: Number },
     lng: { type: Number }
   },
-  date: { type: String },
+  date: { type: String , required: 'This field is required'},
   startTime: { type: String },
   entryPrice: { type: String },
   ticketsAvailable: { type: Boolean },
@@ -37,7 +37,7 @@ const gigSchema = new mongoose.Schema({
 });
 
 const eventSchema = new mongoose.Schema({
-  eventName: { type: String },
+  eventName: { type: String, required: 'This field is required' },
   gig: gigSchema,
   pub: placeSchema,
   restaurant: placeSchema,

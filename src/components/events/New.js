@@ -31,8 +31,7 @@ findGigs = (e) => {
         radius: 10,
         eventcode: 'COMEDY',
         description: 1,
-        minDate: '2018-06-01',
-        maxDate: '2018-06-02'
+        minDate: `${this.state.date}`
       }
     })
     .then(res => this.setState({ gigs: res.data.results }, () =>
@@ -84,7 +83,8 @@ findPubs = () => {
 selectPub = (e) => {
   const { value: placeId } = e.target;
   const pub = this.state.pubs.find(pub => pub.place_id === placeId);
-  const event = { ...this.state.event, pub };
+  const eventName = this.state.eventName;
+  const event = { ...this.state.event, pub, eventName };
   this.setState({ event }, () =>
     console.log(this.state));
 }
