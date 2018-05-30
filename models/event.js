@@ -28,8 +28,8 @@ const gigSchema = new mongoose.Schema({
     lng: { type: Number }
   },
   date: { type: String },
-  startTime: { type: Number },
-  entryprice: { type: String },
+  startTime: { type: String },
+  entryPrice: { type: String },
   ticketsAvailable: { type: Boolean },
   acts: [],
   description: { type: String },

@@ -34,11 +34,15 @@ render(){
       <p>{event.gig.entryprice}</p>
       <p>{event.gig.description}</p>
       <p>{event.gig.acts[0]}</p>
-      <h3>Pub</h3>
-      <p>{event.pub.name}</p>
-      <img src={`${event.pub.image}`}/>
-      <p>{event.pub.address}</p>
-      <Map className="map" center={event.gig.location} markers={event.pub.location}/>
+      {event.pub &&
+        <div>
+          <h3>Pub</h3>
+          <p>{event.pub.name}</p>
+          <img src={`${event.pub.image}`}/>
+          <p>{event.pub.address}</p>
+          <Map className="map" center={event.gig.location} markers={event.pub.location}/>
+        </div>
+      }
 
 
     </div>
