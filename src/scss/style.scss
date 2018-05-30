@@ -19,9 +19,14 @@
 
 }
 
-.title{
+//home page
+.columns.is-mobile > .column.is-offset-one-fifth {
+ margin-bottom: 25%;
+}
+
+h1.title.has-text-white{
   font-family: 'Bungee Shade', cursive;
-  font-size: 200px;
+  font-size: 75px;
   color: white
 }
 
