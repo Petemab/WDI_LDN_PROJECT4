@@ -33,50 +33,8 @@ class Map extends React.Component {
 
 
 
-    // this.marker.addListener('click', () => {
-    //   // infowindow.setContent('<div><strong>' + station.name + '</strong><br>');
-    //   // infowindow.open(map, marker);
-    //   placesService.nearbySearch({
-    //     location: this.marker.getPosition(),
-    //     radius: 500,
-    //     type: ['bar']
-    //   }, (results) => {
-    //     const cleanedResults = results.map(bar => {
-    //       return {
-    //         name: bar.name,
-    //         address: bar.vicinity,
-    //         location: bar.geometry.location.toJSON(),
-    //         image: bar.photos ? bar.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) : null
-    //       };
-    //     });
-
-
-
-
-    // this.generateMarkers();
-
   }
-  // fix this
-  // generateMarkers = () => {
-  //   if(!this.props.markers) return false;
-  //
-  //   this.markers.forEach(marker => marker.setMap(null));
-  //
-  //   this.markers = this.props.markers.map(marker => {
-  //     return new google.maps.Marker({
-  //       position: marker.location,
-  //       map: this.map,
-  //       label: '🍺'
-  //     });
-  //   });
-  //
-  // }
-  //
-  // debouncedGenerateMarkers = _.debounce(() => this.generateMarkers(), 250);
-  //
-  // componentDidUpdate() {
-  //   this.debouncedGenerateMarkers();
-  // }
+
 
   //to make sure map is destroyed after leaving page
   componentWillUnmount() {

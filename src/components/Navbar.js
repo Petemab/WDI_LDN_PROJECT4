@@ -30,11 +30,12 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/">
-            <img src="https://chuo.fm/wp-content/uploads/2015/01/Spotlight1.jpg" width="112" />
-          </Link>
+          <Link className="navbar-item" to="/">Home </Link>
+
+          {/* <img src="https://chuo.fm/wp-content/uploads/2015/01/Spotlight1.jpg" width="112" /> */}
+
           <a role="button" className={`navbar-burger ${this.state.navIsOpen? 'is-active' : ''}`} onClick={this.handleToggle}>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

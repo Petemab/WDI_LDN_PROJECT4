@@ -7,17 +7,28 @@
   background-size: cover;
 
 
-  // height: 100%;
-// no-repeat center center fixed;;
-
 }
 
-.nav.navbar {
+//navbar
+
+.navbar {
+  &.is-transparent {
   background-color: transparent;
-  // font-family: 'Roboto', sans-serif;
-  // color: white;
+  background-image: none;
+    a.navbar-item{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    }
+  }
+
 
 }
+// .nav.navbar.navbarStyle {
+//   background-color: transparent;
+//   font-family: 'Roboto', sans-serif;
+//   color: white;
+//
+// }
 
 //home page
 .columns.is-mobile > .column.is-offset-one-fifth {
@@ -30,9 +41,37 @@ h1.title.has-text-white{
   color: white
 }
 
-p,h2,h3,h1{
-  color: white;
+h1.subtitle.has-text-white{
+  font-weight: 800;
 }
+
+h2.subtitle.has-text-white{
+  padding-top: 50px;
+}
+
+.homeBox{
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+p,h2,h3{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+//reg page
+.regButton, .logButton{
+  margin-left: 146px;
+}
+
+// //log in page
+// .logButton{
+//
+//
+// }
+
 .map {
   height: 260px;
 

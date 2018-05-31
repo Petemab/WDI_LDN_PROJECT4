@@ -153,8 +153,11 @@ render(){
             {this.state.pubs.map(pub => <option key={pub.place_id} value={pub.place_id}>{pub.name}</option>)}
           </select>
           }
-          {/* change the center below */}
-          <Map className="map" center={gig.location} />
+
+
+          <Map className="map" center={gig.location}  />
+          {/* Can't get mrkers to appear  === pubMarker={pub.location} */}
+
           <button onClick={this.handleSubmit}>Save this Stand Up Soirée</button>
 
         </div>

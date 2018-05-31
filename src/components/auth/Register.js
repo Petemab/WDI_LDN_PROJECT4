@@ -29,44 +29,60 @@ class AuthRegister extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <div className="field">
-          <input
-            className="input"
-            name="username"
-            placeholder="User Name"
-            onChange={this.handleChange}
-          />
+      <div className="columns is-mobile is-multiline is-centered">
+        <div className="column is-one-third">
         </div>
-        <div className="field">
-          <input
-            className="input"
-            name="email"
-            placeholder="Email"
-            onChange={this.handleChange}
+        <div className="column is-one-third has-text-centered homeBox">
+          <h1 className="subtitle has-text-black">Sign up</h1>
+        </div>
+        <div className="column is-one-third">
+        </div>
 
-          />
+        <div className="column is-one-third">
         </div>
-        <div className="field">
-          <input
-            type="password"
-            className="input"
-            name="password"
-            placeholder="Password"
-            onChange={this.handleChange}
-          />
+        <div className="column is-one-third">
+
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <input
+                className="input is-rounded"
+                name="username"
+                placeholder="User Name"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="field">
+              <input
+                className="input is-rounded"
+                name="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="field">
+              <input
+                type="password"
+                className="input is-rounded"
+                name="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="field">
+              <input
+                type="password"
+                className="input is-rounded"
+                name="passwordConfirmation"
+                placeholder="Password Confirmation"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button className="button is-black is-rounded regButton">Submit</button>
+          </form>
         </div>
-        <div className="field">
-          <input
-            type="password"
-            className="input"
-            name="passwordConfirmation"
-            placeholder="Password Confirmation"
-            onChange={this.handleChange}
-          />
+        <div className="column is-one-third">
         </div>
-        <button className="button is-primary">Submit</button>
-      </form>
+      </div>
 
 
     );
