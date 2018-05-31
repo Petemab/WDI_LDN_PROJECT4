@@ -27,7 +27,7 @@ class UsersShow extends React.Component{
     return(
       <div className="container">
 
-        <h1 className="title has-text-white">My Profile</h1>
+        <h1 className="title has-text-white">{user.username}&apos;s Profile</h1>
         <div className="columns is-multiline">
           <div className="column is-half">
             <div className="card userShowCard">
