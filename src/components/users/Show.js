@@ -53,32 +53,23 @@ class UsersShow extends React.Component{
             </div>
           </div>
           <div className="column is-half-desktop" >
-            <div className="columns">
-              {/* <div className="column is-one-third">
+            <h2 className="userShowtitle has-text-white">{ user.username }&apos;s Stand Up Soirées</h2>
+            <div className="columns is-multiline">
+              {user.events.map(event =>
+                <div className="column is-one-third" key={event._id}>
+                  <Link to={`/events/${event._id}`}>
+                    <div key={event._id} className="card userShowEventCard">
+                      <div
+                        className="card-image userEventCardImg"
+                        style={{ backgroundImage: `url(${event.gig.image})` }}
+                      />
+                    </div>
+                    <p>{event.eventName}</p>
+                    <p>{event.gig.date}</p>
+                  </Link>
+                </div>
+              )}
 
-              </div> */}
-
-              <div className="column is-one-third">
-                <h2 className="subtitle has-text-white">{ user.username }&apos;s Stand Up Soirées</h2>
-                {user.events.map(event =>
-                  <div key={event._id}>
-                    <Link to={`/events/${event._id}`}>
-                      <div key={event._id} className="card userShowEventCard">
-                        <div
-                          className="card-image userEventCardImg"
-                          style={{ backgroundImage: `url(${event.gig.image})` }}
-                        />
-                        <p>{event.eventName}</p>
-                        <p>{event.gig.date}</p>
-                      </div>
-                    </Link>
-                  </div>
-                )}
-
-              </div>
-            {/* <div className="column is-one-third">
-
-            </div> */}
             </div>
           </div>
         </div>
@@ -87,7 +78,7 @@ class UsersShow extends React.Component{
 
 
     );
-}
+  }
 
 
 

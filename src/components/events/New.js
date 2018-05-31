@@ -6,6 +6,7 @@ import Map from '../common/Map';
 import qs from 'querystring';
 
 
+
 class EventsNew extends React.Component{
 
 state = {
@@ -127,7 +128,6 @@ render(){
     <div>
       {!this.state.gigs && !this.state.selectedGig &&
         <div>
-          <h1>This will be the create new event page</h1>
           <EventForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
@@ -135,51 +135,97 @@ render(){
             findGigs={this.findGigs}
           />
         </div> }
-      {!gig && this.state.gigs && this.state.gigs.map(gig =>
 
-        <div key={gig.id}>
-          <h1>We found some gigs!</h1>
-          <p>{gig.eventname}</p>
-          {gig.artists.map(artist =>
-            <div key={artist.artistid}>
-              <p>{artist.name}</p>
+
+      {!gig && this.state.gigs &&
+        <h1 className="userShowtitle">We Found Some Great Gigs!</h1>
+      }
+
+      {!gig && this.state.gigs && <div className="columns is-multiline">
+        {this.state.gigs.map(gig =>
+          <div className="column is-one-third-desktop is-half-tablet" key={gig.id}>
+            <div className="card userShowCard">
+              <div
+                className="card-image"
+                style={{ backgroundImage: `url(${gig.largeimageurl})` }}
+              ></div>
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    <p className="title is-4">{gig.eventname}</p>
+                    {gig.artists.map(artist =>
+                      <div key={artist.artistid}>
+                        <p className="subtitle is-6">{artist.name}</p>
+                      </div>
+                    )}
+                    <p className="subtitle is-6">{gig.date}</p>
+                    <p className="subtitle is-6">{gig.entryprice}</p>
+                    <p className="subtitle is-6">{gig.description}</p>
+                    <p className="subtitle is-6">{gig.venue.name}</p>
+                    <p className="subtitle is-6">{gig.venue.address}</p>
+                    <p className="subtitle is-6">{gig.venue.postcode}</p>
+                    <a className="subtitle is-8" href={`${gig.link}`}>Find Out More</a>
+                    <hr/>
+                    <button className="button is-small is-black is-rounded" onClick={() => this.selectGig(gig)}>Select this Gig</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          )}
-          <img src={`${gig.largeimageurl}`} />
-          <button onClick={() => this.selectGig(gig)}>Select this Gig</button>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
+      }
 
       {this.state.gigs && gig &&
-        <div>
-          <h1>This is your selected gig</h1>
-          <h2>{gig.name}</h2>
-          <img src={`${gig.image}`} />
-          <p>{gig.artists}</p>
-          {/* {gig.artists.map(artist =>
-            <div key={artist.artistid}>
-              <p>{artist.name}</p>
-              <img src={`${artist.image}`} />
+        <div className="columns is-multiline">
+          <div className="column is-half">
+            <h1 className="userShowtitle">This is your selected gig</h1>
+
+            <div className="card userShowCard">
+              <div
+                className="card-image"
+                style={{ backgroundImage: `url(${gig.image})` }}
+              >
+              </div>
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    <p className="title is-4">{ gig.name }</p>
+                    <p className="subtitle is-5">{gig.venue}</p>
+                    <p className="subtitle is-5">{gig.address}</p>
+                    <p className="subtitle is-5">{gig.date}</p>
+                    <p className="subtitle is-5">{gig.startTime}.00</p>
+                    <p className="subtitle is-5">{gig.entryprice}</p>
+                    <p className="subtitle is-6">{gig.description}</p>
+                    <p className="subtitle is-6">{gig.acts[0]}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          )} */}
-          <p>{gig.description}</p>
-          <p>{gig.entryPrice}</p>
-          <p>{gig.venue}</p>
-          <p>{gig.address}</p>
-          {/* this needs to change too - it's just a placeholder */}
-          <h1>Why not choose a bar or restaurant?</h1>
-          {this.state.pubs &&
-          <select name="pub" onChange={this.selectPub} defaultValue="">
-            <option value="" disabled>Please select</option>
-            {this.state.pubs.map(pub => <option key={pub.place_id} value={pub.place_id}>{pub.name}</option>)}
-          </select>
-          }
+          </div>
+          <div className="column is-half">
+            <h1 className="userShowtitle">Why not go for a drink before?</h1>
+            <div className="card pubShowCard">
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    {this.state.pubs &&
+                    <select name="pub" onChange={this.selectPub} defaultValue="">
+                      <option value="" disabled>Please select</option>
+                      {this.state.pubs.map(pub => <option key={pub.place_id} value={pub.place_id}>{pub.name}</option>)}
+                    </select>
+                    }
+                    <Map className="map" center={gig.location}/>
+                    <hr/>
+                    {/* Can't get mrkers to appear  === pubMarker={pub.location} */}
 
+                    <button className="button is-small is-rounded is-black saveButton" onClick={this.handleSubmit}>Save this Stand Up Soirée</button>
 
-          <Map className="map" center={gig.location}/>
-          {/* Can't get mrkers to appear  === pubMarker={pub.location} */}
-
-          <button onClick={this.handleSubmit}>Save this Stand Up Soirée</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 

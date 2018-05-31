@@ -54,6 +54,14 @@ class AuthRegister extends React.Component{
             <div className="field">
               <input
                 className="input is-rounded"
+                name="image"
+                placeholder="Image"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="field">
+              <input
+                className="input is-rounded"
                 name="email"
                 placeholder="Email"
                 onChange={this.handleChange}

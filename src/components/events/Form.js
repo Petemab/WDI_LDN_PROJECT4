@@ -1,32 +1,43 @@
 import React from 'react';
 
 
-//add list of functions to pass in the event form
+
 
 const EventForm = ({handleChange, findGigs, event}) => {
 
   return(
-    <div>
-      <h1>This will be a form</h1>
-      <div className="field">
-        <label htmlFor="name">Event Name</label>
-        <input id="eventName" name="eventName" className="input"
-          placeholder="Event Name" onChange={handleChange}
-          value={event.eventName || ''} />
+    <div className="columns is-mobile is-multiline is-centered">
+
+      <div className="column is-one-third">
       </div>
-      {/* <div className="field">
-        <label htmlFor="location">Which City?</label>
-        <input id="city" name="city" className="input"
-          placeholder="Which City?" onChange={handleChange}
-          value={event.city || ''} />
-      </div> */}
-      <div className="field">
-        <label htmlFor="date">Date</label>
-        <input id="date" type="date" name="date" className="input"
-          placeholder="Event Date" onChange={handleChange}
-          value={event.date || ''} />
+
+      <div className="column is-one-third has-text-centered homeBox">
+        <h1 className="subtitle has-text-black">Plan your Stand Up Soirée!</h1>
       </div>
-      <button onClick={findGigs}>Find Gigs</button>
+
+      <div className="column is-one-third">
+      </div>
+
+      <div className="column is-one-third">
+      </div>
+
+      <div className="column is-one-third">
+        <div className="field">
+          <label htmlFor="name">Give your soirée the name it deserves</label>
+          <input id="eventName" name="eventName" className="input is-rounded"
+            placeholder="Event Name" onChange={handleChange}
+            value={event.eventName || ''} />
+        </div>
+        <div className="field">
+          <label htmlFor="date">What night do you want to go out?</label>
+          <input id="date" type="date" name="date" className="input is-rounded"
+            placeholder="Event Date" onChange={handleChange}
+            value={event.date || ''} />
+        </div>
+        <button className="button is-small is-rounded is-black formButton"onClick={findGigs}>Find Gigs</button>
+      </div>
+      <div className="column is-one-third">
+      </div>
 
     </div>
 

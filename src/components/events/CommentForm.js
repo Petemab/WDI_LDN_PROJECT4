@@ -4,11 +4,11 @@ const CommentForm = ({ handleChange, handleSubmit, comment }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
-        <label htmlFor="text">Comment</label>
+        <label htmlFor="text">Got Something to say about this Soirée?</label>
         <textarea className="textarea" id="text" name="text"
-          placeholder="Comment"  onChange={handleChange} value={comment.text || ''}/>
+          placeholder="Leave your comments here!"  onChange={handleChange} value={comment.text || ''}/>
       </div>
-      <button className="button is-primary">Submit</button>
+      <button className="button is-small is-rounded is-black">Submit</button>
     </form>
   );
 };

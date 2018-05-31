@@ -56,55 +56,85 @@ render(){
   if(!this.state.event) return null;
 
   return(
-    <div>
-      <h1>This will be the event show page</h1>
-      <p>{event.eventName}</p>
-      <p>{event.gig.name}</p>
-      <Link to={`/users/${event.user}`}>
-        <p>Click here to see more events created by this user</p>
-      </Link>
-      <img src={`${event.gig.image}`} />
-      <p>{event.gig.venue}</p>
-      <p>{event.gig.address}</p>
-      <p>{event.gig.date}</p>
-      <p>{event.gig.startTime}</p>
-      <p>{event.gig.entryprice}</p>
-      <p>{event.gig.description}</p>
-      <p>{event.gig.acts[0]}</p>
-      {event.pub &&
-        <div>
-          <h3>Pub</h3>
-          <p>{event.pub.name}</p>
-          <img src={`${event.pub.image}`}/>
-          <p>{event.pub.address}</p>
-          {/* <p>{event.pub.geometry.location.lat}</p> */}
-          <Map className="map" center={event.gig.location} pubMarker={event.pub.location}/>
+    <div className="columns is-multiline">
+
+      <div className="column is-half">
+        <h1 className="userShowtitle">{event.eventName}</h1>
+        <div className="card userShowCard">
+          <div
+            className="card-image"
+            style={{ backgroundImage: `url(${event.gig.image})` }}
+          >
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-4">{ event.gig.name }</p>
+                <p className="subtitle is-5">{event.gig.venue}</p>
+                <p className="subtitle is-5">{event.gig.address}</p>
+                <p className="subtitle is-5">{event.gig.date}</p>
+                <p className="subtitle is-5">{event.gig.startTime}.00</p>
+                <p className="subtitle is-5">£{event.gig.entryprice}</p>
+                <p className="subtitle is-6">{event.gig.description}</p>
+                <p className="subtitle is-6">{event.gig.acts[0]}</p>
+                <Link to={`/users/${event.user}`}>
+                  <p className="subtitle is-6">Click <strong>here</strong> to see more events created by this user</p>
+                </Link>
+                <Link to={'/events/new/'}
+                  className="button is-black is-rounded showButton"
+                >Not Happy? Organise another!</Link>
+                <button className="button is-danger is-rounded showButton" onClick={this.handleDelete}>Delete</button>
+              </div>
+            </div>
+          </div>
         </div>
-      }
-      <Link to={`/events/${event._id}/edit`}
-        className="button"
-      >Edit</Link>
-      <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-      <ul>
-        {event.comments.map(comment =>
-          <li key={comment._id}>
-            <p>{comment.user.username}</p>
-            <p className="title is-6">{comment.text}</p>
-            {/* will need to add the conditional back in once I've worked out why it's not working */}
-            {Auth.isCurrentUser(comment.user) &&
-            <button className="button is-danger"
-              onClick={() => this.handleCommentDelete(comment)}
-            >Delete</button>
-            }
-            <hr />
-          </li>
-        )}
-      </ul>
-      {Auth.isAuthenticated() && <CommentForm
-        handleChange={this.handleCommentChange}
-        handleSubmit={this.handleCommentSubmit}
-        comment={this.state.comment}
-      />}
+      </div>
+      <div className="column is-half">
+
+        {event.pub &&
+            <div className="card pubShowCard">
+              <div
+                className="card-image"
+                style={{ backgroundImage: `url(${event.pub.image})` }}
+              >
+              </div>
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    <p className="title is-4">Let&apos;s meet here for a drink first!</p>
+                    <p className="subtitle is-6">{event.pub.name}</p>
+                    <p className="subtitle is-6">{event.gig.address}</p>
+                    <p className="subtitle is-6">{event.pub.address}</p>
+                    <Map className="map" center={event.gig.location} pubMarker={event.pub.location}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+      </div>
+      <div className="column is-half is-centered is-offset-one-quarter">
+        <ul>
+          {event.comments.map(comment =>
+            <li key={comment._id}>
+              <p>{comment.user.username}</p>
+              <p className="title is-6">{comment.text}</p>
+              {/* will need to add the conditional back in once I've worked out why it's not working */}
+              {Auth.isCurrentUser(comment.user) &&
+              <button className="button is-danger is-rounded is-small"
+                onClick={() => this.handleCommentDelete(comment)}
+              >Delete</button>
+              }
+              <hr />
+            </li>
+          )}
+        </ul>
+        {Auth.isAuthenticated() && <CommentForm
+          handleChange={this.handleCommentChange}
+          handleSubmit={this.handleCommentSubmit}
+          comment={this.state.comment}
+        />}
+      </div>
+
 
     </div>
   );

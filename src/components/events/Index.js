@@ -18,16 +18,27 @@ class EventsIndex extends React.Component{
   render(){
     console.log('render', this.state);
     return(
-      <div>
-        <h1>This is the Index page for events</h1>
+      <div className="columns is-multiline">
+        <h1 className="userShowtitle">Check out these other Stand Up Soirées</h1>
         {this.state.events.map(event =>
-          <div key={event._id}>
+          <div className="column is-one-third-desktop is-half-tablet" key={event._id}>
             <Link to={`/events/${event._id}`}>
-              <p>{event.eventName}</p>
-              <p>{event.gig.name}</p>
-              <img src={`${event.gig.image}`}/>
-              <p>{event.gig.venue}</p>
-              <p>{event.gig.date}</p>
+              <div className="card userShowCard">
+                <div
+                  className="card-image"
+                  style={{ backgroundImage: `url(${event.gig.image})` }}
+                ></div>
+                <div className="card-content">
+                  <div className="media">
+                    <div className="media-content">
+                      <p className="title is-4">{event.eventName}</p>
+                      <p className="subtitle is-6">{event.gig.name}</p>
+                      <p className="subtitle is-6">{event.gig.venue}</p>
+                      <p className="subtitle is-6">{event.gig.date}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Link>
 
 

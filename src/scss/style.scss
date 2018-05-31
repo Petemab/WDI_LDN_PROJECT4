@@ -64,14 +64,14 @@ h2.subtitle.has-text-white{
   box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
-p,h2,h3{
+p,h2,h3,{
   color: white;
   font-family: 'Roboto', sans-serif;
 }
 
 //reg page
-.regButton, .logButton{
-  margin-left: 146px;
+.regButton, .logButton, .formButton{
+  margin-left: 145px;
 }
 
 .input{
@@ -89,9 +89,20 @@ p,h2,h3{
   height: 400px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-
 }
 
+.hero-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.userShowtitle{
+  font-family: 'Bungee Shade', cursive;
+  font-size: 50px;
+  color: white
+}
 .userShowCard {
   border: black solid 3px;
   border-radius: 20px;
@@ -99,7 +110,7 @@ p,h2,h3{
 }
 
 .userShowEventCard {
-  
+
   border: black solid 3px;
   border-radius: 20px;
   box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
@@ -112,4 +123,59 @@ p,h2,h3{
   background-size: cover;
   background-repeat: no-repeat;
   height: 100px;
+  border-radius: 20px;
+}
+
+.showCard{
+  border: black solid 3px;
+  border-radius: 20px;
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+  height: 400px;
+  padding-top: 30px;
+}
+
+.showTitle{
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 25px;
+}
+
+.showSubtitle{
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.showText{
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 12px;
+}
+
+.pubShowCard {
+  border: black solid 3px;
+  border-radius: 20px;
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+  margin-top: 45px;
+}
+
+.showButton {
+  margin: 3px;
+}
+
+.textarea {
+  border: black solid 1px;
+}
+
+
+
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.saveButton {
+  margin-top: 5px;
+  margin-left: 145px;
 }
