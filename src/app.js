@@ -8,6 +8,7 @@ import {
 
 import './scss/style.scss';
 import 'bulma';
+import '@fortawesome/fontawesome-free-solid';
 
 import Home from './components/Home';
 import Navbar from './components/Navbar';

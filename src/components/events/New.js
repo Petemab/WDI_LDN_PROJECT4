@@ -3,7 +3,7 @@ import axios from 'axios';
 import Auth from '../../lib/Auth';
 import EventForm from './Form';
 import Map from '../common/Map';
-
+import qs from 'querystring';
 
 
 class EventsNew extends React.Component{
@@ -80,9 +80,30 @@ findPubs = () => {
 
 }
 
+// to get the image from google places
+getImageUrl = (place) => {
+  if(!place.photos[0]) return null;
+  const endpoint = 'https://maps.googleapis.com/maps/api/place/photo';
+  const params = {
+    key: 'AIzaSyCPr7S7RyMxHqqWsRNkhhDL5-tOIZ2c2QU',
+    photoreference: place.photos[0].photo_reference,
+    maxwidth: 400
+  };
+  return `${endpoint}?${qs.stringify(params)}`;
+}
+
+//gets the pub from the Google places search and saves to state
 selectPub = (e) => {
   const { value: placeId } = e.target;
-  const pub = this.state.pubs.find(pub => pub.place_id === placeId);
+  const selectedPub = this.state.pubs.find(pub => pub.place_id === placeId);
+
+  const pub = {
+    name: selectedPub.name,
+    address: selectedPub.vicinity,
+    location: selectedPub.geometry.location,
+    image: this.getImageUrl(selectedPub)
+  };
+
   const eventName = this.state.eventName;
   const event = { ...this.state.event, pub, eventName };
   this.setState({ event }, () =>
@@ -155,7 +176,7 @@ render(){
           }
 
 
-          <Map className="map" center={gig.location}  />
+          <Map className="map" center={gig.location}/>
           {/* Can't get mrkers to appear  === pubMarker={pub.location} */}
 
           <button onClick={this.handleSubmit}>Save this Stand Up Soirée</button>

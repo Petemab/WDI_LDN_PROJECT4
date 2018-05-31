@@ -5,7 +5,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  font-family: 'Roboto', sans-serif;
 
 }
 
@@ -23,12 +23,18 @@
 
 
 }
-// .nav.navbar.navbarStyle {
-//   background-color: transparent;
-//   font-family: 'Roboto', sans-serif;
-//   color: white;
-//
-// }
+
+.navbar-menu.is-active {
+    background-color: transparent;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    padding: 0.5rem 0;
+}
+
+//work this out!!!!! Stop the burger drop down from having a white background colour
+a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+    background-color: transparent;
+
+}
 
 //home page
 .columns.is-mobile > .column.is-offset-one-fifth {
@@ -47,6 +53,7 @@ h1.subtitle.has-text-white{
 
 h2.subtitle.has-text-white{
   padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .homeBox{
@@ -54,6 +61,7 @@ h2.subtitle.has-text-white{
   opacity: 0.8;
   border-radius: 20px;
   border: 2px solid black;
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
 p,h2,h3{
@@ -66,13 +74,42 @@ p,h2,h3{
   margin-left: 146px;
 }
 
-// //log in page
-// .logButton{
-//
-//
-// }
+.input{
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+}
 
 .map {
   height: 260px;
+}
 
+.card-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
+
+.userShowCard {
+  border: black solid 3px;
+  border-radius: 20px;
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+}
+
+.userShowEventCard {
+  
+  border: black solid 3px;
+  border-radius: 20px;
+  box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+  margin: 5px;
+
+}
+
+.userEventCardImg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
 }

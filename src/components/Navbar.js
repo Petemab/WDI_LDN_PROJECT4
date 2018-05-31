@@ -32,11 +32,12 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/">Home </Link>
-
-          {/* <img src="https://chuo.fm/wp-content/uploads/2015/01/Spotlight1.jpg" width="112" /> */}
-
-          <a role="button" className={`navbar-burger ${this.state.navIsOpen? 'is-active' : ''}`} onClick={this.handleToggle}>
+          <Link className="navbar-item" to="/">
+            <span className="icon has-text-white">
+              <i className="fas fa-home"></i>
+            </span>
+          </Link>
+          <a role="button" className={`navbar-burger is-transparent ${this.state.navIsOpen? 'is-active' : ''}`} onClick={this.handleToggle}>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -44,7 +45,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className={`navbar-menu ${this.state.navIsOpen ? 'is-active' : ''}`}>
-          <div className="navbar-end">
+          <div className="navbar-end is-transparent">
             <Link to="/events" className="navbar-item">See Other Stand Up Soirées</Link>
             <Link to="/events/new" className="navbar-item">Plan a Stand Up Soirée</Link>
             {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Logout</a>}
