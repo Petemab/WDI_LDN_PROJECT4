@@ -37,7 +37,7 @@ class App extends React.Component {
                 <SecureRoute exact path="/events/:id/edit" component={EventsEdit} />
                 <SecureRoute exact path="/events/new" component={EventsNew} />
                 <SecureRoute exact path="/events/:id" component={EventsShow}/>
-                <SecureRoute exact path="/users/:id" component={UsersShow}/>
+                <Route exact path="/users/:id" component={UsersShow}/>
                 <Route path="/events" component={EventsIndex}/>
                 <Route path="/register" component={AuthRegister}/>
                 <Route path="/login" component={AuthLogin}/>

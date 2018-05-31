@@ -86,11 +86,12 @@ selectPub = (e) => {
   const eventName = this.state.eventName;
   const event = { ...this.state.event, pub, eventName };
   this.setState({ event }, () =>
-    console.log('after selecting pub ====>', this.state));
+    console.log('after selecting pub ====>', event));
 }
 
 handleSubmit = (e) => {
   e.preventDefault();
+  console.log('======>',this.state.event);
 
   axios.post('/api/events', this.state.event, {
     headers: { Authorization: `Bearer ${Auth.getToken()}` }

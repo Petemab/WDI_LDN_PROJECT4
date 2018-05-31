@@ -9,6 +9,7 @@ class Map extends React.Component {
   constructor() {
     super();
     this.markers = [];
+    // this.pubMarkers = [];
   }
 
   componentDidMount() {
@@ -23,11 +24,13 @@ class Map extends React.Component {
       label: '😆'
     });
 
+    console.log('Pub Marker', this.props.pubMarker);
     this.pubMarker = new google.maps.Marker({
-      position: this.map.pubMarker,
+      position: this.props.pubMarker,
       map: this.map,
       label: '🍺'
     });
+
 
 
     // this.marker.addListener('click', () => {

@@ -5,14 +5,14 @@ import Auth from '../../lib/Auth';
 
 class EventsEdit extends React.Component {
   state = {
-    errors: {
-
-    }
+    errors: {},
+    event: {}
   };
   //to get the burger by id:
   componentDidMount() {
     axios.get(`/api/events/${this.props.match.params.id}`)
-      .then(res => this.setState(res.data));
+      // .then(res => this.setState( { event: res.data } ));
+      .then(res => console.log(res.data));
   }
 
   //desctructures the e event to pass it as an argument
@@ -34,7 +34,7 @@ class EventsEdit extends React.Component {
   render() {
     if(Object.keys(this.state).length === 0) return null;
     return <EventForm
-      event={this.state}
+      event={this.state.event}
       handleChange={this.handleChange}
       handleSubmit={this.handleSubmit}
       errors={this.state.errors}

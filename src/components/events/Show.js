@@ -9,15 +9,13 @@ import CommentForm from './CommentForm';
 class EventsShow extends React.Component{
 
 state = {
-  event: null,
   comment: {}
 }
 
 
 componentDidMount() {
-  console.log(this.props);
   axios.get(`/api/events/${this.props.match.params.id}`)
-    .then(res => this.setState({ event: res.data }));
+    .then(res => this.setState({ event: res.data }, () => console.log('======>',this.state.event)));
 }
 
 handleDelete = () => {
@@ -62,6 +60,9 @@ render(){
       <h1>This will be the event show page</h1>
       <p>{event.eventName}</p>
       <p>{event.gig.name}</p>
+      <Link to={`/users/${event.user}`}>
+        <p>Click here to see more events created by this user</p>
+      </Link>
       <img src={`${event.gig.image}`} />
       <p>{event.gig.venue}</p>
       <p>{event.gig.address}</p>
@@ -77,7 +78,7 @@ render(){
           <img src={`${event.pub.image}`}/>
           <p>{event.pub.address}</p>
           {/* <p>{event.pub.geometry.location.lat}</p> */}
-          <Map className="map" center={event.gig.location} />
+          <Map className="map" center={event.gig.location} pubMarker={event.pub.location}/>
         </div>
       }
       <Link to={`/events/${event._id}/edit`}

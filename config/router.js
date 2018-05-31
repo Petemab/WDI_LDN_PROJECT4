@@ -17,7 +17,7 @@ router.route('/users')
   .get(users.userIndex);
 
 router.route('/users/:id')
-  .get(secureRoute, users.userShow)
+  .get(users.userShow)
   .delete(secureRoute, users.userDelete);
 
 router.post('/events/:id/comments', secureRoute, events.commentCreate);

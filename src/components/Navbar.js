@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Auth from '../lib/Auth';
+import axios from 'axios';
 
 class Navbar extends React.Component {
 
   state = {
-    navIsOpen: false
+    navIsOpen: false,
+    user: {}
   }
 
   handleToggle = () => {
     this.setState({ navIsOpen: !this.state.navIsOpen });
+  }
+
+  componentDidMount() {
+    Auth.isAuthenticated() && axios.get(`/api/users/${Auth.getPayload().sub}`)
+      .then(res => this.setState({ user: res.data }));
   }
 
   componentWillUpdate() {
@@ -40,7 +47,7 @@ class Navbar extends React.Component {
             <Link to="/events" className="navbar-item">See Other Stand Up Soirées</Link>
             <Link to="/events/new" className="navbar-item">Plan a Stand Up Soirée</Link>
             {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Logout</a>}
-            {Auth.isAuthenticated() && <Link to="/users/id" className="navbar-item">My Profile</Link>}
+            {Auth.isAuthenticated() && <Link to={`/users/${this.state.user._id}`} className="navbar-item">My Profile</Link>}
             {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
             {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
           </div>
