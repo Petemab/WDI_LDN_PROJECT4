@@ -5,7 +5,7 @@ import Auth from '../../lib/Auth';
 
 
 
-class UsersShow extends React.Component{
+class ProfileShow extends React.Component{
 
   state = {
     event: null
@@ -95,4 +95,4 @@ class UsersShow extends React.Component{
 
 }
 
-export default UsersShow;
+export default ProfileShow;

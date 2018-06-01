@@ -18,6 +18,7 @@ import EventsIndex from './components/events/Index';
 import EventsShow from './components/events/Show';
 import EventsNew from './components/events/New';
 import UsersShow from './components/users/Show';
+import ProfileShow from './components/profile/Show';
 import EventsEdit from './components/events/Edit';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
@@ -37,8 +38,9 @@ class App extends React.Component {
               <Switch>
                 <SecureRoute exact path="/events/:id/edit" component={EventsEdit} />
                 <SecureRoute exact path="/events/new" component={EventsNew} />
-                <SecureRoute exact path="/events/:id" component={EventsShow}/>
-                <Route exact path="/users/:id" component={UsersShow}/>
+                <Route exact path="/events/:id" component={EventsShow}/>
+                <SecureRoute exact path="/users/:id" component={UsersShow}/>
+                <SecureRoute exact path="/profile/:id" component={ProfileShow}/>
                 <Route path="/events" component={EventsIndex}/>
                 <Route path="/register" component={AuthRegister}/>
                 <Route path="/login" component={AuthLogin}/>

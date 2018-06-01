@@ -3,6 +3,7 @@ const events = require('../controllers/events');
 const auth = require('../controllers/auth');
 const users = require('../controllers/users');
 const secureRoute = require('../lib/secureRoute');
+const profile = require('../controllers/profile');
 
 router.route('/events')
   .get(events.index)
@@ -19,6 +20,10 @@ router.route('/users')
 router.route('/users/:id')
   .get(users.userShow)
   .delete(secureRoute, users.userDelete);
+
+router.route('/profile/:id')
+  .get(secureRoute, profile.show);
+
 
 router.post('/events/:id/comments', secureRoute, events.commentCreate);
 router.delete('/events/:id/comments/:commentId', secureRoute, events.commentDelete);

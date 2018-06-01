@@ -70,10 +70,10 @@ render(){
             <div className="media">
               <div className="media-content">
                 <p className="title is-4">{ event.gig.name }</p>
-                <p className="subtitle is-5">{event.gig.venue}</p>
-                <p className="subtitle is-5">{event.gig.address}</p>
-                <p className="subtitle is-5">{event.gig.date}</p>
-                <p className="subtitle is-5">{event.gig.startTime}.00</p>
+                <p className="subtitle is-5">Venue: {event.gig.venue}</p>
+                <p className="subtitle is-5">Address: {event.gig.address}</p>
+                <p className="subtitle is-5">Date: {event.gig.date}</p>
+                <p className="subtitle is-5">Doors: {event.gig.startTime}.00</p>
                 <p className="subtitle is-5">£{event.gig.entryprice}</p>
                 <p className="subtitle is-6">{event.gig.description}</p>
                 <p className="subtitle is-6">{event.gig.acts[0]}</p>
@@ -102,9 +102,10 @@ render(){
                 <div className="media">
                   <div className="media-content">
                     <p className="title is-4">Let&apos;s meet here for a drink first!</p>
+                    <hr/>
                     <p className="subtitle is-6">{event.pub.name}</p>
-                    <p className="subtitle is-6">{event.gig.address}</p>
                     <p className="subtitle is-6">{event.pub.address}</p>
+                    <hr/>
                     <Map className="map" center={event.gig.location} pubMarker={event.pub.location}/>
                   </div>
                 </div>

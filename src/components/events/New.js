@@ -4,6 +4,8 @@ import Auth from '../../lib/Auth';
 import EventForm from './Form';
 import Map from '../common/Map';
 import qs from 'querystring';
+import striptags from 'striptags';
+import decode from 'unescape';
 
 
 
@@ -45,7 +47,7 @@ selectGig = (selectedGig) => {
     name: selectedGig.eventname,
     image: selectedGig.largeimageurl,
     venue: selectedGig.venue.name,
-    address: selectedGig.venue.address,
+    address: decode(striptags(selectedGig.venue.address), 'all'),
     location: {
       lat: selectedGig.venue.latitude,
       lng: selectedGig.venue.longitude
