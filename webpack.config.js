@@ -49,6 +49,11 @@ module.exports = {
         target: 'http://localhost:4000',
         secure: false
       }
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     }
   },
   plugins: [HotModuleReplcement, HtmlWebpack, CopyWebpack]
