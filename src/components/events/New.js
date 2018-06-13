@@ -26,7 +26,7 @@ handleChange = ({ target: { name, value } }) => {
 findGigs = (e) => {
   e.preventDefault();
   axios
-    .get('http://www.skiddle.com/api/v1/events/search/',{
+    .get('https://www.skiddle.com/api/v1/events/search/',{
       params: {
         api_key: 'da5309460b3745c052e5b81db46975f1',
         latitude: 51.5074,
