@@ -2,15 +2,15 @@
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
 
-#Project 4: Stand Up Soirée
+# Project 4: Stand Up Soirée
 
 <hr>
 
-###Overview
+### Overview
 Stand Up Soirée allows users to plan a night out based around watching stand-up comedy. Users can sign in, create an event then search for pubs nearby and then save.
 
 
-###Project Brief
+### Project Brief
 
 ##### Technical Requirements
 
@@ -31,14 +31,14 @@ Stand Up Soirée allows users to plan a night out based around watching stand-up
 * A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
 * **A `readme.md` file**
 
-###[Heroku](https://standupsoiree.herokuapp.com/)
+### [Heroku](https://standupsoiree.herokuapp.com/)
 
-###[GitHub Repo](https://github.com/Petemab/WDI_LDN_PROJECT4)
+### [GitHub Repo](https://github.com/Petemab/WDI_LDN_PROJECT4)
 
  ---
 
 
-###Technologies:
+### Technologies:
 
 For this project I have used the following technologies:
 
@@ -64,7 +64,7 @@ For this project I have used the following technologies:
 
 ---
 
-###APIs Used:
+### APIs Used:
 
 For this project I have used the following APIs:
 
@@ -74,7 +74,7 @@ For this project I have used the following APIs:
 
 ---
 
-###Wireframes
+### Wireframes
 I used Balsamiq to wireframe my project before I started and the end results were pretty similar:
 
 ![.balsamiq1](./src/assets/images/balsamiq1.png)
@@ -86,7 +86,7 @@ I used Balsamiq to wireframe my project before I started and the end results wer
 
 ---
 
-###Trello
+### Trello
 
 I used Trello to much better effect on this project than in my previous ones. I was much better able to keep across what needed to be done and not get blocked.
 
@@ -94,7 +94,7 @@ I used Trello to much better effect on this project than in my previous ones. I 
 
 ---
 
-###Screenshots
+### Screenshots
 Some Screen shots
 Home Page:
 ![.Home](./src/assets/images/homescreen.png)
@@ -130,7 +130,7 @@ Show Page:
 
 ---
 
-###Wins
+### Wins
 
 * I was pleased that for this final project I was able to create a plan and braodly stick to it and stay on schedule.
 
@@ -138,7 +138,7 @@ Show Page:
 
 ---
 
-###Future Features
+### Future Features
 
 Features I would have liked to include:
 
