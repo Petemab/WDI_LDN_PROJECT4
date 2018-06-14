@@ -26,7 +26,7 @@ handleChange = ({ target: { name, value } }) => {
 findGigs = (e) => {
   e.preventDefault();
   axios
-    .get('https://cots-anywhere.herokuapp.com/https://www.skiddle.com/api/v1/events/search/',{
+    .get('https://cors-anywhere.herokuapp.com/https://www.skiddle.com/api/v1/events/search/',{
       params: {
         api_key: 'da5309460b3745c052e5b81db46975f1',
         latitude: 51.5074,
@@ -69,7 +69,7 @@ selectGig = (selectedGig) => {
 findPubs = () => {
   const { gig } = this.state.event;
   axios
-    .get('https://cots-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
+    .get('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
       params: {
         location: `${gig.location.lat},${gig.location.lng}`,
         radius: 500,
@@ -86,7 +86,7 @@ findPubs = () => {
 // to get the image from google places
 getImageUrl = (place) => {
   if(!place.photos[0]) return null;
-  const endpoint = 'https://cots-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo';
+  const endpoint = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo';
   const params = {
     key: 'AIzaSyCPr7S7RyMxHqqWsRNkhhDL5-tOIZ2c2QU',
     photoreference: place.photos[0].photo_reference,
