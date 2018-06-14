@@ -2,15 +2,15 @@
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
 
-#Project 4: Stand Up Soirée
+# Project 4: Stand Up Soirée
 
 <hr>
 
-###Overview
+### Overview
 Stand Up Soirée allows users to plan a night out based around watching stand-up comedy. Users can sign in, create an event then search for pubs nearby and then save.
 
 
-###Project Brief
+### Project Brief
 
 ##### Technical Requirements
 
