@@ -86,7 +86,7 @@ findPubs = () => {
 // to get the image from google places
 getImageUrl = (place) => {
   if(!place.photos[0]) return null;
-  const endpoint = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo';
+  const endpoint = 'https://maps.googleapis.com/maps/api/place/photo';
   const params = {
     key: 'AIzaSyCPr7S7RyMxHqqWsRNkhhDL5-tOIZ2c2QU',
     photoreference: place.photos[0].photo_reference,

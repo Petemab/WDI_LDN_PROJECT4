@@ -77,7 +77,11 @@ For this project I have used the following APIs:
 ###Wireframes
 I used Balsamiq to wireframe my project before I started and the end results were pretty similar:
 
-![]()
+![.balsamiq1](./src/assets/images/balsamiq1.png)
+![.balsamiq2](./src/assets/images/balsamiq2.png)
+![.balsamiq3](./src/assets/images/balsamiq3.png)
+![.balsamiq4](./src/assets/images/balsamiq4.png)
+![.balsamiq5](./src/assets/images/balsamiq5.png)
 
 
 ---
@@ -86,27 +90,32 @@ I used Balsamiq to wireframe my project before I started and the end results wer
 
 I used Trello to much better effect on this project than in my previous ones. I was much better able to keep across what needed to be done and not get blocked.
 
-TRELLO SCREEN SHOT HERE
+![.Trello](./src/assets/images/Trello.png)
 
 ---
 
 ###Screenshots
 Some Screen shots
 Home Page:
-Home Page Image here
+![.Home](./src/assets/images/homescreen.png)
 
-Registration Page: 10fregister
+Login Page:
+![.login](./src/assets/images/login.png)
 
-Login Page: 4flogin
+My Profile Page:
+![.profile](./src/assets/images/profile.png)
 
-Current Donations Page: 5fdonations
+New Page:
+![.newPage](./src/assets/images/newPage.png)
 
-Add a Donation: 6fdonationadd
+New Page with Gigs:
+![.newwithgigs](./src/assets/images/Newwithgigs.png)
 
-Donation Show Page: 7fdonationshow
+New Page Pubs:
+![.newPubs](./src/assets/images/newPubs.png)
 
-Charity Page displaying nearby vendors with available food: 8fvendorshowpage
-
+Show Page:
+![.showPages](./src/assets/images/showPage.png)
 ---
 
 ###Challenges and Problems
