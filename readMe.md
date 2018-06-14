@@ -118,11 +118,11 @@ Show Page:
 ![.showPages](./src/assets/images/showPage.png)
 ---
 
-###Challenges and Problems
+### Challenges and Problems
 
 * While I had used Google Maps/Places in my previous project with some success I found was surprisingly time-consuming trying to get it to do what I wanted.
 
-* Trying to create both a user show page (to display the details of the user who created an event) and also a profile show page (to display the current user details) was tricky. At several points I thought I had solved this issue before discovering something was still up! While I eventualy overcame the issue, as a newcomer to React it was quite difficult trying to understand why State and Props would not always function in the way I had presumed they would.
+* Trying to create both a user show page (to display the details of the user who created an event) and also a profile show page (to display the current user details) was tricky. At several points I thought I had solved this issue before discovering something was still up! While I eventually overcame the issue, as a newcomer to React it was quite difficult trying to understand why State and Props would not always function in the way I had presumed they would.
 
 * After deployment on Heroku I discovered an issue with making my axios requests thanks to CORS. While the final solution of using 'cors-anywhere' in the url was relatively simple, I struggled with various possible solutions before coming up with this.
 
@@ -132,7 +132,7 @@ Show Page:
 
 ### Wins
 
-* I was pleased that for this final project I was able to create a plan and braodly stick to it and stay on schedule.
+* I was pleased that for this final project I was able to create a plan and broadly stick to it and stay on schedule.
 
 * I was also fairly happy with the styling as I had often found this took me far longer than expected.
 
