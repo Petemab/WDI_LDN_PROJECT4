@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Auth from '../lib/Auth';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Navbar extends React.Component {
 
@@ -14,10 +14,11 @@ class Navbar extends React.Component {
     this.setState({ navIsOpen: !this.state.navIsOpen });
   }
 
-  componentDidMount() {
-    Auth.isAuthenticated() && axios.get(`/api/users/${Auth.getPayload().sub}`)
-      .then(res => this.setState({ user: res.data }, () => console.log(this.state)));
-  }
+  //this is now redundant after deciding making the axios request was just complicating things!
+  // componentDidMount() {
+  //   Auth.isAuthenticated() && axios.get(`/api/users/${Auth.getPayload().sub}`)
+  //     .then(res => this.setState({ user: res.data }, () => console.log('navbar', this.state)));
+  // }
 
   componentWillUpdate() {
     this.state.navIsOpen && this.setState({ navIsOpen: false });
@@ -26,6 +27,7 @@ class Navbar extends React.Component {
   handleLogout = () => {
     Auth.logout();
     this.props.history.push('/');
+    this.setState({ user: {} });
   }
 
   render() {
@@ -49,7 +51,7 @@ class Navbar extends React.Component {
             <Link to="/events" className="navbar-item">See Other Stand Up Soirées</Link>
             <Link to="/events/new" className="navbar-item">Plan a Stand Up Soirée</Link>
             {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Logout</a>}
-            {Auth.isAuthenticated() && <Link to={`/profile/${this.state.user.id}`} className="navbar-item">My Profile</Link>}
+            {Auth.isAuthenticated() && <Link  to={`/profile/${Auth.getPayload().sub}`} className="navbar-item">My Profile</Link>}
             {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
             {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
           </div>
