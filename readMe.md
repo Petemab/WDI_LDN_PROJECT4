@@ -120,7 +120,7 @@ Show Page:
 
 ### Challenges and Problems
 
-* While I had used Google Maps/Places in my previous project with some success I found was surprisingly time-consuming trying to get it to do what I wanted.
+* While I had used Google Maps/Places in my previous project with some success I found it was surprisingly time-consuming trying to get it to do what I wanted.
 
 * Trying to create both a user show page (to display the details of the user who created an event) and also a profile show page (to display the current user details) was tricky. At several points I thought I had solved this issue before discovering something was still up! While I eventually overcame the issue, as a newcomer to React it was quite difficult trying to understand why State and Props would not always function in the way I had presumed they would.
 
@@ -134,7 +134,7 @@ Show Page:
 
 * I was pleased that for this final project I was able to create a plan and broadly stick to it and stay on schedule.
 
-* I was also fairly happy with the styling as I had often found this took me far longer than expected.
+* I was also happy with the styling as I had often found this took me far longer than expected.
 
 ---
 
@@ -144,6 +144,6 @@ Features I would have liked to include:
 
 * I would have loved to have included a feature to share the events via email/text with something like nodemailer.
 
-* Adding Google Routes to show distance between bars and venues would also lift the app a bit.
+* Adding Google Routes to show distance between bars and venues would also lift the app.
 
-* I would have also like dot have expanded the app to allow users to save favourite comedians and search for events specific to that comic. Ideally also it would have been fun to try and create a 'night in' feature, where users could search for comedy shows on TV/Netflix and perhaps also browse take-aways via the Just Eat api!
+* I would have also liked to have expanded the app to allow users to save favourite comedians and search for events specific to that comic. Ideally also it would have been fun to try and create a 'night in' feature, where users could search for comedy shows on TV/Netflix and perhaps also browse take-aways via the Just Eat api!
